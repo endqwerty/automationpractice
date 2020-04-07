@@ -6,7 +6,12 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "proxy": "LOCATION=remote cross-var ./node_modules/.bin/nightwatch -c conf/proxy.conf.js -e $npm_package_config_browsers",
+    "remote": "LOCATION=remote cross-var ./node_modules/.bin/nightwatch -c conf/remote.conf.js -e $npm_package_config_browsers",
+    "ci": "LOCATION=remote ./node_modules/.bin/nightwatch -c conf/remote.conf.js",
+    "local": "LOCATION=local cross-var ./node_modules/.bin/nightwatch -c conf/local.conf.js -e chrome",
+    "dev-remote": "LOCATION=remote node cross-var ./scripts/remote.runner.js -c conf/dev-remote.conf.js -e $npm_package_config_browsers",
+    "dev": "rm -rf screenshots/local && LOCATION=local cross-var ./node_modules/.bin/nightwatch -c conf/local.conf.js -e chrome"
   },
   "repository": {
     "type": "git",

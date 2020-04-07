@@ -23,6 +23,11 @@ This limitation is due to Chromedriver only supporting LTS. Workarounds are avai
 
 For reference: [Node LTS Schedule](https://github.com/nodejs/Release)
 
+## Required Configuration
+
+Add in the values that exist in `.env.example`.
+Recognize that LOCATION is used as a value by the scripts.
+
 ## Development
 
 * Prettier
