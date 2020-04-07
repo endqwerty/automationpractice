@@ -21,9 +21,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
-var request = require('request')
+const request = require('request')
 
-var options = {
+const options = {
   url: 'https://api.browserstack.com/automate/builds.json?status=running',
   auth: {
     user: process.env.BROWSERSTACK_USERNAME,

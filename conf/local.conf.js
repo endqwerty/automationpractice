@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 // Read in the common nightwatch configuration
-var nightwatch_config = require('./common.conf')
+const nightwatch_config = require('./common.conf')
 
 Object.assign(nightwatch_config.webdriver, {
   start_process: true,

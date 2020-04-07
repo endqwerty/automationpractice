@@ -25,9 +25,9 @@ SOFTWARE.
 require('dotenv').config()
 
 // Declare a common configuration which can be used on all the subsequent configurations of nightwatch
-var nightwatch_config = {
+const nightwatch_config = {
   src_folders: ['tests'],
-  // page_objects_path: ['pages'],
+  page_objects_path: ['pages'],
   globals_path: 'globals.js',
   // custom_commands_path: ['commands'],
   // custom_assertions_path: ['assertions'],

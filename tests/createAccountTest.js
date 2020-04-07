@@ -1,14 +1,17 @@
+const homePage = browser.page.homePage() // defined in MyPage.js module
+const loginPage = browser.page.auth.loginPage()
+
 module.exports = {
   '@disabled': false,
 
   'Find new account page': function (browser) {
-    var currentTimestamp = new Date().getTime();
+    const currentTimestamp = new Date().getTime()
     browser
       .url('http://www.automationpractice.com')
       .waitForElementPresent('.login')
       .click('.login')
       .waitForElementPresent('#SubmitCreate')
-      .setValue('input#email_create', `test+${currentTimestamp}@mail.com`)
+      .setValue('input#email_create', 'test+' + currentTimestamp + '@mail.com')
       .click('#SubmitCreate')
       .assert.not.visible('#create_account_error')
       .waitForElementPresent('.account_creation')
