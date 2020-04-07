@@ -21,7 +21,7 @@ Currently, that is Node>=10.0.0
 
 This limitation is due to Chromedriver only supporting LTS. Workarounds are available but unsupported.
 
-For reference: https://github.com/nodejs/Release
+For reference: [Node LTS Schedule](https://github.com/nodejs/Release)
 
 ## Development
 
