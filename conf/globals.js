@@ -90,5 +90,6 @@ module.exports = {
     afterEach: function (browser, done) {
         // Ensure the browser closed
         browser.end()
+        done()
     },
 }
