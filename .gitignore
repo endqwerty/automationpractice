@@ -114,6 +114,7 @@ dist
 .yarn/build-state.yml
 .pnp.*
 
-# screenshots from nightwatch
+# testing output from nightwatch
 
 screenshots
+tests_output
