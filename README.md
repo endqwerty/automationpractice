@@ -43,4 +43,4 @@ Recognize that LOCATION is used as a value by the scripts.
 
 ## License
 
-UNLICENSED
+MIT

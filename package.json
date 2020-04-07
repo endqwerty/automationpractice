@@ -18,7 +18,7 @@
     "url": "git+https://github.com/endqwerty/automationpractice.git"
   },
   "author": "Daniel Yang",
-  "license": "UNLICENSED",
+  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/endqwerty/automationpractice/issues"
   },
@@ -31,6 +31,7 @@
     "nightwatch": "^1.3.4"
   },
   "devDependencies": {
+    "browserstack-local": "^1.4.5",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
