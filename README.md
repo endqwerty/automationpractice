@@ -32,7 +32,9 @@ For reference: [Node LTS Schedule](https://github.com/nodejs/Release)
   * linting
   * utilizes the Prettier plugin to ensure compatibility
 * cross-var
-  * used to ensure cross platform compatibility with Node provided env vars
+  * ensures cross platform compatibility with Node provided env vars
+* dotenv
+  * loads env secrets into the running env
 
 ## License
 
