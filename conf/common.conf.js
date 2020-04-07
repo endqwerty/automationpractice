@@ -94,50 +94,12 @@ var nightwatch_config = {
                 resolution: '1366x768',
             },
         },
-        ie: {
-            desiredCapabilities: {
-                browserName: 'IE',
-                browser_version: '11.0',
-                os: 'Windows',
-                os_version: '7',
-                resolution: '1366x768',
-                'browserstack.customSendKeys': 400,
-            },
-        },
         edge: {
             desiredCapabilities: {
                 browserName: 'Edge',
                 os: 'Windows',
                 os_version: '10',
                 resolution: '1366x768',
-            },
-        },
-        safari: {
-            desiredCapabilities: {
-                browserName: 'Safari',
-                os: 'OSX',
-                os_version: 'Sierra',
-                resolution: '1366x768',
-            },
-        },
-        iphone: {
-            desiredCapabilities: {
-                browserName: 'iPhone',
-                platform: 'MAC',
-                device: 'iPhone XS',
-                realMobile: 'true',
-            },
-        },
-        galaxyS7Edge: {
-            desiredCapabilities: {
-                browser: 'Chrome',
-                browserName: 'galaxyS7Edge',
-                browser_version: '62.0',
-                os: 'OSX',
-                os_version: 'High Sierra',
-                chromeOptions: {
-                    args: ['hide-scrollbars'],
-                },
             },
         },
     },
