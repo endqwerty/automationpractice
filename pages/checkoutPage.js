@@ -1,9 +1,12 @@
 const merge = require('lodash/merge')
-const basePage = require('./basePage')
+const baseSection = require('./sections/baseSection')
 
-module.exports = merge(basePage, {
-  elements: {},
-  commands: [{}],
-  props: {},
-  sections: {},
-})
+module.exports = merge(
+  {
+    elements: {},
+    commands: [{}],
+    props: {},
+    sections: {},
+  },
+  baseSection
+)
