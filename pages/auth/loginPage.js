@@ -1,55 +1,31 @@
 module.exports = {
   // can be string or function
   url: function () {
-    return this.api.launchUrl
+    return 'http://automationpractice.com/index.php?controller=authentication'
   },
-  elements: {
-    // shorthand, specifies selector
-    mySubmitButton: 'input[type=submit]',
-  },
-  commands: [
-    {
-      myCustomPause: function () {
-        this.api.pause(this.props.myPauseTime)
-      },
-    },
-  ],
+  elements: {},
+  commands: [],
   // object version (best considered immutable)
-  props: {
-    myPauseTime: 1000,
-  },
+  props: {},
 
   sections: {
-    myFooterSection: {
-      selector: '#my-footer',
-      locateStrategy: 'css selector',
+    createAccount: {
+      selector: 'form#create-account_form',
       elements: {
-        myLogo: {
-          selector: '.my-logo',
-          locateStrategy: 'css selector',
-        },
+        email: 'input#email_create',
+        submitButton: '#SubmitCreate',
+        errorBox: '#create_account_error',
       },
       commands: [
         {
-          myMoveToLogo: function () {
-            this.moveToElement(
-              '@myLogo',
-              this.props.myLogoX,
-              this.props.myLogoY
-            )
+          submitNewEmail: function (emailAddress) {
+            return this.setValue('@email', emailAddress)
+              .click('@submitButton')
+              .assert.not.visible('@errorBox')
           },
         },
       ],
-      // function version (recommended)
-      props: function () {
-        return {
-          myLogoX: 10,
-          myLogoY: 10,
-        }
-      },
-      sections: {
-        // additional, nested sections
-      },
     },
+    logIn: { selector: 'form#login_form' },
   },
 }

@@ -1,7 +1,7 @@
 module.exports = {
   // can be string or function
   url: function () {
-    return this.api.launchUrl
+    return 'http://www.automationpractice.com'
   },
   elements: {},
   commands: [],
@@ -13,6 +13,13 @@ module.exports = {
       elements: {
         loginButton: '.login',
       },
+      commands: [
+        {
+          goToLogin: function () {
+            return this.click('@loginButton')
+          },
+        },
+      ],
     },
     body: {
       selector: '#columns',
