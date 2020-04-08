@@ -7,5 +7,5 @@ jobs:
       - run:
           name: Do Nothing
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+            npm ci
+            npm run ci
