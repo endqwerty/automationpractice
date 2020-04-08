@@ -1,4 +1,7 @@
-module.exports = {
+const merge = require('lodash/merge')
+const basePage = require('../basePage')
+
+module.exports = merge(basePage, {
   url: 'http://automationpractice.com/index.php?controller=authentication',
   elements: {},
   commands: [],
@@ -23,4 +26,4 @@ module.exports = {
     },
     logIn: { selector: 'form#login_form' },
   },
-}
+})
