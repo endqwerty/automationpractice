@@ -4,24 +4,10 @@ module.exports = {
   props: {},
   sections: {
     accountInfo: {
-      selector: 'form#account-creation_form',
+      selector: '//div[h1]',
+      locateStrategy: 'xpath',
       elements: {
         titleMr: 'input#id_gender1',
-        titleMrs: 'input#id_gender2',
-        customerFirstName: 'input#customer_firstname',
-        customerLastName: 'input#customer_lastname',
-        password: 'input#passwd',
-        addressFirstName: 'input#firstname',
-        addressLastName: 'input#lastname',
-        addressRow1: 'input#address1',
-        addressRow2: 'input#address2',
-        addressCity: 'input#city',
-        addressState: 'select#id_state',
-        addressPostCode: 'input#postcode',
-        addressCountry: 'select#id_country',
-        addressPhone: 'input#phone_mobile',
-        addressAlias: 'input#alias',
-        submitButton: 'button#submitAccount',
       },
       commands: [
         {

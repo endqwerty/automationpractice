@@ -1,13 +1,8 @@
 module.exports = {
-  // can be string or function
-  url: function () {
-    return 'http://automationpractice.com/index.php?controller=authentication'
-  },
+  url: 'http://automationpractice.com/index.php?controller=authentication',
   elements: {},
   commands: [],
-  // object version (best considered immutable)
   props: {},
-
   sections: {
     createAccount: {
       selector: 'form#create-account_form',

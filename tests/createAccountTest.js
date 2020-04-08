@@ -4,6 +4,8 @@ module.exports = {
   'Find new account page': function (browser) {
     const homePage = browser.page.homePage()
     const loginPage = browser.page.auth.loginPage()
+    const createAccountPage = browser.page.auth.createAccountPage()
+    const myAccountPage = browser.page.myAccount.myAccountPage()
     const currentTimestamp = new Date().getTime()
     const fakeEmail = 'test+' + currentTimestamp + '@mail.com'
     homePage.navigate()
@@ -11,20 +13,20 @@ module.exports = {
     loginPage.assert
       .visible(loginPage.section.createAccount)
       .section.createAccount.submitNewEmail(fakeEmail)
-    browser
-      .waitForElementPresent('.account_creation')
-      .setValue('input#customer_firstname', 'Daniel')
-      .setValue('input#customer_lastname', 'Yang')
-      .setValue('input#passwd', 'P@ssw0rd!!!')
-      // .setValue('input#firstname', 'Daniel')
-      // .setValue('input#lastname', 'Yang')
-      .setValue('input#address1', '13 Cloverfield Ln')
-      .setValue('input#city', 'Seattle')
-      .setValue('select#id_state', 'Washington')
-      .setValue('input#postcode', '12345')
-      .setValue('select#id_country', 'United States')
-      .setValue('input#phone_mobile', '1238675309')
-      .click('button#submitAccount')
-      .waitForElementPresent('body#my-account')
+    createAccountPage.assert
+      .visible(createAccountPage.section.accountInfo)
+      .section.accountInfo.fillInMinimum(
+        'Daniel',
+        'Yang',
+        'P@ssw0rd!!!',
+        '13 Cloverfield Ln',
+        'New York City',
+        'New York',
+        '12345',
+        'United States',
+        '1238675309'
+      )
+      .clickSubmit()
+    myAccountPage.assert.visible(myAccountPage.section.accountInfo)
   },
 }

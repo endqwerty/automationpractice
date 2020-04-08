@@ -1,8 +1,6 @@
 module.exports = {
   // can be string or function
-  url: function () {
-    return 'http://www.automationpractice.com'
-  },
+  url: 'http://www.automationpractice.com',
   elements: {},
   commands: [],
   props: {},
