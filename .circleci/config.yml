@@ -1,0 +1,11 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: dubnium-alpine
+    steps:
+      - run:
+          name: Do Nothing
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
