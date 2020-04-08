@@ -1,18 +1,16 @@
 module.exports = {
   '@disabled': false,
 
-  'Find new account page': function (browser) {
+  'Create a new account': function (browser) {
     const homePage = browser.page.homePage()
     const loginPage = browser.page.auth.loginPage()
     const createAccountPage = browser.page.auth.createAccountPage()
     const myAccountPage = browser.page.myAccount.myAccountPage()
-    const currentTimestamp = new Date().getTime()
-    const fakeEmail = 'test+' + currentTimestamp + '@mail.com'
     homePage.navigate()
     homePage.assert.visible(homePage.section.header).section.header.goToLogin()
     loginPage.assert
       .visible(loginPage.section.createAccount)
-      .section.createAccount.submitNewEmail(fakeEmail)
+      .section.createAccount.submitWithFakeEmail()
     createAccountPage.assert
       .visible(createAccountPage.section.accountInfo)
       .section.accountInfo.fillInMinimum(

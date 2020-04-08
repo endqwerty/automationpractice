@@ -3,9 +3,8 @@ const baseSection = require('./sections/baseSection')
 
 module.exports = merge(
   {
-    url: 'http://www.automationpractice.com',
     elements: {},
-    commands: [],
+    commands: [{}],
     props: {},
     sections: {},
   },
