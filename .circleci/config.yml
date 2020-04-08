@@ -3,9 +3,14 @@ jobs:
   build:
     docker:
       - image: node:dubnium-alpine
+    working_directory: ~/project
     steps:
+      - checkout
       - run:
-          name: Do Nothing
+          name: npm install
           command: |
             npm ci
+      - run:
+          name: run ci test
+          command: |
             npm run ci
