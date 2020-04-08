@@ -1,7 +1,7 @@
 module.exports = {
   '@disabled': false,
 
-  'Find new account page': function (browser) {
+  'Create a new account': function (browser) {
     const homePage = browser.page.homePage()
     const loginPage = browser.page.auth.loginPage()
     const createAccountPage = browser.page.auth.createAccountPage()
