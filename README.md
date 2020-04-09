@@ -27,19 +27,25 @@ For reference: [Node LTS Schedule](https://nodejs.org/en/about/releases/)
 
 ## Configuration
 
-Sample config is located in `.env.example`
+Sample config is located in `.env.example`. The environment variables you will need to have set depends on the location you wish to run the project at.
 
 The env var `LOCATION` is included in the sample file, but does not need to be set if executed through npm scripts.
 
-There are two location types supported. They are defined by executing on the **local** machine or executing on a **remote** machine (Browserstack)
+There are two location types supported. They are defined by executing on the **local** machine or executing on a **remote** machine (Browserstack).
+
+### Nightwatch configuration
+
+Nightwatch settings are located in `conf/`. The bulk of the settings are located in `conf/common.conf.js` while some location specific settings are in the conf files named for the location.
+
+Common items such as Browser version, OS version, Browser Window size, etc are all cofigured here.
+
+A full list of configuration options are in the [nightwatch docs](https://nightwatchjs.org/gettingstarted/configuration/#nightwatch-json).
 
 ### Local Execution
 
-A version of Chrome browser that is supported by the latest chromedriver is expected to be installed.
+A version of Chrome browser that is supported by the latest chromedriver is expected to be installed. For additional notes, check the [chromedriver docs](https://www.npmjs.com/package/chromedriver).
 
 For testing other versions of Chrome/Firefox utilize the command flags which [nightwatch provides](https://nightwatchjs.org/guide/running-tests/#command-line-options).
-
-Nightwatch settings are located in `conf/`
 
 ### Remote Execution
 
@@ -47,13 +53,45 @@ Recognize that LOCATION is used as a value by the scripts.
 
 Any value in the env var `LOCAL` will cause the test to run using Browserstack's tunnel. This project does **NOT** currently check truthiness of the value.
 
+### Proxy
+
+Proxy tunneling is not supported. Implementation will likely need to make use of the `browserstack-local` npm package.
+
 ## Development
+
+* Use a Node LTS version
+* Use ES6 syntax
+* Follow Prettier/ESLint rules
+* Do NOT use array functions. (is not 100% compatible with Nightwatch)
 
 ### Page Object Model
 
 This makes extensive use of Nighwatch's [Page Objects](https://nightwatchjs.org/guide/working-with-page-objects/). Additional API details are on [github](https://github.com/nightwatchjs/nightwatch/wiki/Page-Object-API).
 
 It is important to note that the Page Object api does not include the full Browser/Client api.
+
+Specific to the website automationpractice.com, this project uses the structure and pattern of:
+
+```txt
+|pages/
+|-- <groups of similar pages>/
+    |-- xyz1Page.js             - imports sections such as header, footer, auth, etc
+    |__ xyz2Page.js
+|-- sections/                   - Contains sections such as header, footer
+    |-- sharedSection.js
+    |__ testSection.js
+|__ homePage.js                  - imports sections such as header, footer
+```
+
+As we do not have the source code for the project behind automationpractice.com, these scripts are more fragile than ones that lives with the source code. However, it is possible to identify areas of shared code in the framework such as with the auth forms.
+
+### Creating new tests
+
+The [nightwatch documentation](https://nightwatchjs.org/guide/working-with-page-objects/#using-page-objects) includes most of the relevant details regarding writing tests with page objects.
+
+### Extending Nightwatch
+
+Custom Assertions and Custom Commands are commented out in `conf/common.conf.js` and they can be used as described by [nightwatch](https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands)
 
 ### Tools used
 

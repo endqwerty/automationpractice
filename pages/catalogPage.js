@@ -1,5 +1,5 @@
 const util = require('util')
-const merge = require('lodash/merge')
+const merge = require('lodash.merge')
 const baseSection = require('./sections/baseSection')
 
 module.exports = merge(
