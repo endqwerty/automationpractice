@@ -25,9 +25,11 @@ This limitation is due to Chromedriver only supporting LTS. Workarounds are avai
 
 For reference: [Node LTS Schedule](https://nodejs.org/en/about/releases/)
 
+A version of Chrome browser that is supported by the latest chromedriver is expected to be installed. For additional notes, check the [chromedriver docs](https://www.npmjs.com/package/chromedriver).
+
 ## Quickstart
 
-After cloning the repo and ensuring that you have the requisite node version, execute `npm install` and `npm run local`
+After cloning the repo and ensuring that you have the requisite node version and a recent version of Chrome, execute `npm install` and `npm run local`
 
 ## Configuration
 
@@ -45,15 +47,11 @@ Common items such as Browser version, OS version, Browser Window size, etc are a
 
 A full list of configuration options are in the [nightwatch docs](https://nightwatchjs.org/gettingstarted/configuration/#nightwatch-json).
 
-### Local Execution
-
-A version of Chrome browser that is supported by the latest chromedriver is expected to be installed. For additional notes, check the [chromedriver docs](https://www.npmjs.com/package/chromedriver).
-
-For testing other versions of Chrome/Firefox utilize the command flags which [nightwatch provides](https://nightwatchjs.org/guide/running-tests/#command-line-options).
+For additional customization options utilize the command flags which [nightwatch provides](https://nightwatchjs.org/guide/running-tests/#command-line-options)
 
 ### Remote Execution
 
-Recognize that LOCATION is used as a value by the scripts.
+Recognize that the env var `LOCATION` is used as a value by the scripts.
 
 Remote execution requires the values `BROWSERSTACK_ACCESS_KEY` and `BROWSERSTACK_USERNAME` to be set.
 
