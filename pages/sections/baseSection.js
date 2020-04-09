@@ -4,8 +4,8 @@ module.exports = {
       selector: '#header',
       locateStrategy: 'css selector',
       elements: {
-        loginButton: '.login',
-        cart: '.shopping_cart',
+        contactUsButton: 'a.[title="Contact Us"]',
+        loginButton: 'a.login',
         womenMenu: 'div>ul>li>a[title="Women"]',
         dressesMenu: 'div>ul>li>a[title="Dresses"]',
         casualDressesItem:

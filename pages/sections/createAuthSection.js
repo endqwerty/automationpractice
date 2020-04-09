@@ -3,21 +3,21 @@ module.exports = {
     accountInfo: {
       selector: 'form#account-creation_form',
       elements: {
-        titleMr: 'input#id_gender1',
-        titleMrs: 'input#id_gender2',
-        customerFirstName: 'input#customer_firstname',
-        customerLastName: 'input#customer_lastname',
-        password: 'input#passwd',
-        addressFirstName: 'input#firstname',
-        addressLastName: 'input#lastname',
-        addressRow1: 'input#address1',
-        addressRow2: 'input#address2',
-        addressCity: 'input#city',
-        addressState: 'select#id_state',
-        addressPostCode: 'input#postcode',
-        addressCountry: 'select#id_country',
-        addressPhone: 'input#phone_mobile',
-        addressAlias: 'input#alias',
+        titleMrRadio: 'input#id_gender1',
+        titleMrsRadio: 'input#id_gender2',
+        customerFirstNameInput: 'input#customer_firstname',
+        customerLastNameInput: 'input#customer_lastname',
+        passwordInput: 'input#passwd',
+        addressFirstNameInput: 'input#firstname',
+        addressLastNameInput: 'input#lastname',
+        addressRow1Input: 'input#address1',
+        addressRow2Input: 'input#address2',
+        addressCityInput: 'input#city',
+        addressStateSelect: 'select#id_state',
+        addressPostCodeInput: 'input#postcode',
+        addressCountrySelect: 'select#id_country',
+        addressPhoneInput: 'input#phone_mobile',
+        addressAliasInput: 'input#alias',
         submitButton: 'button#submitAccount',
       },
       commands: [
@@ -33,15 +33,15 @@ module.exports = {
             country,
             phone
           ) {
-            return this.setValue('@customerFirstName', firstName)
-              .setValue('@customerLastName', lastName)
-              .setValue('@password', password)
-              .setValue('@addressRow1', address)
-              .setValue('@addressCity', city)
-              .setValue('@addressState', state)
-              .setValue('@addressPostCode', postCode)
-              .setValue('@addressCountry', country)
-              .setValue('@addressPhone', phone)
+            return this.setValue('@customerFirstNameInput', firstName)
+              .setValue('@customerLastNameInput', lastName)
+              .setValue('@passwordInput', password)
+              .setValue('@addressRow1Input', address)
+              .setValue('@addressCityInput', city)
+              .setValue('@addressStateSelect', state)
+              .setValue('@addressPostCodeInput', postCode)
+              .setValue('@addressCountrySelect', country)
+              .setValue('@addressPhoneInput', phone)
           },
           clickSubmit: function () {
             return this.click('@submitButton')

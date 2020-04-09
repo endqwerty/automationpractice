@@ -6,14 +6,14 @@ module.exports = merge(
   {
     elements: {
       itemPopup: '#layer_cart',
-      itemByName: 'a[title="%s"]',
+      itemByNameButton: 'a[title="%s"]',
       addToCartButton: 'a[title="Add to cart"]',
     },
     commands: [
       {
         addItemToCartByName: function (itemName) {
           const formattedItemName = this.props.stringFormattedElement(
-            this.elements.itemByName,
+            this.elements.itemByNameButton,
             itemName
           )
           return this.waitForElementVisible(formattedItemName)
