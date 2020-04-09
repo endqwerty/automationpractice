@@ -2,6 +2,9 @@
   "name": "automationpractice",
   "version": "0.0.1",
   "description": "test the automationpractice.com site",
+  "config": {
+    "browsers": "chrome"
+  },
   "engines": {
     "node": ">=10.0.0"
   },
@@ -9,7 +12,6 @@
     "remote": "LOCATION=remote cross-var ./node_modules/.bin/nightwatch -c conf/remote.conf.js -e $npm_package_config_browsers",
     "ci": "LOCATION=remote ./node_modules/.bin/nightwatch -c conf/remote.conf.js -e chrome",
     "local": "LOCATION=local cross-var ./node_modules/.bin/nightwatch -c conf/local.conf.js -e chrome",
-    "dev-remote": "LOCATION=remote node cross-var ./scripts/remote.runner.js -c conf/dev-remote.conf.js -e $npm_package_config_browsers",
     "dev": "rm -rf screenshots/local && LOCATION=local cross-var ./node_modules/.bin/nightwatch -c conf/local.conf.js -e chrome"
   },
   "repository": {

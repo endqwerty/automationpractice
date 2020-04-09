@@ -55,16 +55,14 @@ For testing other versions of Chrome/Firefox utilize the command flags which [ni
 
 Recognize that LOCATION is used as a value by the scripts.
 
-Any value in the env var `LOCAL` will cause the test to run using Browserstack's tunnel. This project does **NOT** currently check truthiness of the value.
+Remote execution requires the values `BROWSERSTACK_ACCESS_KEY` and `BROWSERSTACK_USERNAME` to be set.
 
-### Proxy
-
-Proxy tunneling is not supported. Implementation will likely need to make use of the `browserstack-local` npm package.
+The CI runs only chrome to save on free execution time from Browserstack.
+Manually triggering a remote execution will run against Firefox, Chrome, and Edge
 
 ## Development
 
 * Use a Node LTS version
-* Use ES6 syntax
 * Follow Prettier/ESLint rules
 * Do NOT use array functions. (is not 100% compatible with Nightwatch)
 * Use camelCase

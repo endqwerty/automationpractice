@@ -51,10 +51,6 @@ const nightwatch_config = {
       skip_testcases_on_fail: false,
       desiredCapabilities: {
         build:
-          process.env.BROWSERSTACK_USERNAME +
-          '-' +
-          process.env.ENV +
-          '-' +
           process.env.npm_package_name +
           '-nightwatchjs-' +
           new Date().toLocaleDateString('en-US', {
