@@ -33,7 +33,7 @@ After cloning the repo and ensuring that you have the requisite node version and
 
 ## Configuration
 
-Sample config is located in `.env.example`. The environment variables you will need to have set depends on the location you wish to run the project at.
+Sample config is located in `.env.example`. The environment variables only need to be set when executing the tests remotely. 
 
 The env var `LOCATION` is included in the sample file, but does not need to be set if executed through npm scripts.
 
