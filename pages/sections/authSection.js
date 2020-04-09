@@ -18,7 +18,7 @@ module.exports = {
               'test+' + new Date().getTime() + '@mail.com'
             )
               .click('@submitButton')
-              .assert.not.visible('@errorBox')
+              .waitForElementNotPresent('@errorBox')
           },
         },
       ],
