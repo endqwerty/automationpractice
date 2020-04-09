@@ -35,7 +35,7 @@ const nightwatch_config = {
   webdriver: {
     start_process: false,
     host: 'hub-cloud.browserstack.com',
-    port: 80,
+    port: 443,
     default_path_prefix: '/wd/hub',
   },
 
@@ -68,7 +68,7 @@ const nightwatch_config = {
             minute: '2-digit',
             hour12: false,
           }),
-        project: 'CD-' + process.env.npm_package_name + '-Nightwatch',
+        project: process.env.npm_package_name + '-Nightwatch',
         'browserstack.user':
           process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
         'browserstack.key':
@@ -80,16 +80,16 @@ const nightwatch_config = {
       desiredCapabilities: {
         browserName: 'Chrome',
         os: 'Windows',
-        os_version: '7',
-        resolution: '1366x768',
+        os_version: '10',
+        resolution: '1600x1200',
       },
     },
     firefox: {
       desiredCapabilities: {
         browserName: 'Firefox',
         os: 'Windows',
-        os_version: '7',
-        resolution: '1366x768',
+        os_version: '10',
+        resolution: '1600x1200',
       },
     },
     edge: {
@@ -97,7 +97,7 @@ const nightwatch_config = {
         browserName: 'Edge',
         os: 'Windows',
         os_version: '10',
-        resolution: '1366x768',
+        resolution: '1600x1200',
       },
     },
   },

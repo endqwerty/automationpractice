@@ -1,4 +1,4 @@
-const merge = require('lodash/merge')
+const merge = require('lodash.merge')
 const baseSection = require('./sections/baseSection')
 
 module.exports = merge(
@@ -7,7 +7,17 @@ module.exports = merge(
     elements: {},
     commands: [],
     props: {},
-    sections: {},
+    sections: {
+      mainContent: {
+        selector: 'div#columns',
+        elements: { successAlert: 'p.alert-success' },
+        commands: {
+          checkSubscriptionSuccess: function () {
+            return this.assert.visible('@successAlert')
+          },
+        },
+      },
+    },
   },
   baseSection
 )

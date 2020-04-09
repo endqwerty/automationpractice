@@ -1,6 +1,6 @@
-const merge = require('lodash/merge')
+const merge = require('lodash.merge')
 const baseSection = require('../sections/baseSection')
-const createAuthSection = require('../sections/authSection')
+const createAuthSection = require('../sections/createAuthSection')
 
 module.exports = merge(
   {

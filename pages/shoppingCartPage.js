@@ -1,4 +1,4 @@
-const merge = require('lodash/merge')
+const merge = require('lodash.merge')
 const baseSection = require('./sections/baseSection')
 const authSection = require('./sections/authSection')
 const createAuthSection = require('./sections/createAuthSection')
@@ -91,6 +91,13 @@ module.exports = merge(
             },
           },
         ],
+      },
+      orderConfirmation: {
+        selector:
+          '//*[@id="center_column"] [//h1[contains(text(),"Order confirmation")]]',
+        locateStrategy: 'xpath',
+        elements: {},
+        commands: [{}],
       },
     },
   },

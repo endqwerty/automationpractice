@@ -4,8 +4,8 @@ module.exports = {
       selector: '#header',
       locateStrategy: 'css selector',
       elements: {
-        loginButton: '.login',
-        cart: '.shopping_cart',
+        contactUsButton: 'div#contact-link',
+        loginButton: 'a.login',
         womenMenu: 'div>ul>li>a[title="Women"]',
         dressesMenu: 'div>ul>li>a[title="Dresses"]',
         casualDressesItem:
@@ -17,6 +17,9 @@ module.exports = {
       },
       commands: [
         {
+          goToContactForm: function () {
+            return this.click('@contactUsButton')
+          },
           goToLogin: function () {
             return this.click('@loginButton')
           },
@@ -37,11 +40,19 @@ module.exports = {
       selector: '#footer',
       locateStrategy: 'css selector',
       elements: {
-        myLogo: {
-          selector: '.my-logo',
-          locateStrategy: 'css selector',
-        },
+        newsletterInput: 'input#newsletter-input',
+        newsletterSubmitButton: 'button[name="submitNewsletter"]',
       },
+      commands: [
+        {
+          subscribeToNewsletterWithFakeEmail: function () {
+            return this.setValue(
+              '@newsletterInput',
+              'test+' + new Date().getTime() + '@mail.com'
+            ).click('@newsletterSubmitButton')
+          },
+        },
+      ],
     },
   },
 }

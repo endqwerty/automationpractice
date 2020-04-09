@@ -33,7 +33,7 @@ const options = {
 
 module.exports = {
   // Global settings
-  waitForConditionTimeout: 10000, // time in ms for all waitFor... commands
+  waitForConditionTimeout: 15000, // time in ms for all waitFor... commands
 
   // screenshot visual regression options
   visual_regression_settings: {
@@ -56,7 +56,9 @@ module.exports = {
 
   // Things to do at the start of each test
   beforeEach: function (browser, done) {
-    browser.timeoutsImplicitWait(5000) // implicit wait for all commands
+    process.env.LOCATION == 'remote'
+      ? browser.timeoutsImplicitWait(20000) // set a long wait for remote execution
+      : browser.timeoutsImplicitWait(5000) // implicit wait for all commands
 
     // If using Browserstack, show the build/session id in the console, so we can quickly go to it
     if (process.env.LOCATION == 'remote') {
