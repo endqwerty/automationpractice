@@ -80,7 +80,7 @@ const nightwatch_config = {
       desiredCapabilities: {
         browserName: 'Chrome',
         os: 'Windows',
-        os_version: '7',
+        os_version: '10',
         resolution: '1600x1200',
       },
     },
@@ -88,7 +88,7 @@ const nightwatch_config = {
       desiredCapabilities: {
         browserName: 'Firefox',
         os: 'Windows',
-        os_version: '7',
+        os_version: '10',
         resolution: '1600x1200',
       },
     },
