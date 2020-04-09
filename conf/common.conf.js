@@ -81,7 +81,7 @@ const nightwatch_config = {
         browserName: 'Chrome',
         os: 'Windows',
         os_version: '7',
-        resolution: '1366x768',
+        resolution: '1600x1200',
       },
     },
     firefox: {
@@ -89,7 +89,7 @@ const nightwatch_config = {
         browserName: 'Firefox',
         os: 'Windows',
         os_version: '7',
-        resolution: '1366x768',
+        resolution: '1600x1200',
       },
     },
     edge: {
@@ -97,7 +97,7 @@ const nightwatch_config = {
         browserName: 'Edge',
         os: 'Windows',
         os_version: '10',
-        resolution: '1366x768',
+        resolution: '1600x1200',
       },
     },
   },

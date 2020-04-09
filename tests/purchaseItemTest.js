@@ -14,13 +14,17 @@ module.exports = {
     const shipping = shoppingCartPage.section.shipping
     const payment = shoppingCartPage.section.payment
     const orderSummary = shoppingCartPage.section.orderSummary
+    const orderConfirmation = shoppingCartPage.section.orderConfirmation
 
     homePage.navigate()
     header.goToTShirts()
     catalogPage.addItemToCartByName('Faded Short Sleeve T-shirts')
     addedToCartPopup.checkout()
+    browser.waitForElementVisible(cartSummary)
     cartSummary.checkoutCart()
+    browser.waitForElementVisible(createAccount)
     createAccount.submitWithFakeEmail()
+    browser.waitForElementVisible(accountInfo)
     accountInfo
       .fillInMinimum(
         'Daniel',
@@ -34,10 +38,15 @@ module.exports = {
         '1238675309'
       )
       .clickSubmit()
+    browser.waitForElementVisible(address)
     address.checkoutCart()
+    browser.waitForElementVisible(shipping)
     shipping.toggleTOS()
     shipping.checkoutCart()
+    browser.waitForElementVisible(payment)
     payment.checkoutByBankWire()
+    browser.waitForElementVisible(orderSummary)
     orderSummary.confirmOrder()
+    browser.assert.visible(orderSummary)
   },
 }

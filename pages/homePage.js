@@ -11,7 +11,11 @@ module.exports = merge(
       mainContent: {
         selector: 'div#columns',
         elements: { successAlert: 'p.alert-success' },
-        commands: {},
+        commands: {
+          checkSubscriptionSuccess: function () {
+            return this.assert.visible('@successAlert')
+          },
+        },
       },
     },
   },

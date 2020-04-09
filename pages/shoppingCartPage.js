@@ -92,6 +92,13 @@ module.exports = merge(
           },
         ],
       },
+      orderConfirmation: {
+        selector:
+          '//*[@id="center_column"] [//h1[contains(text(),"Order confirmation")]]',
+        locateStrategy: 'xpath',
+        elements: {},
+        commands: [{}],
+      },
     },
   },
   baseSection,

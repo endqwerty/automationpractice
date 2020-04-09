@@ -9,6 +9,6 @@ module.exports = {
     homePage.navigate()
     browser.waitForElementVisible(footer)
     footer.subscribeToNewsletterWithFakeEmail()
-    mainContent.assert.visible('@successAlert')
+    mainContent.checkSubscriptionSuccess()
   },
 }

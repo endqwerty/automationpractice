@@ -33,7 +33,7 @@ const options = {
 
 module.exports = {
   // Global settings
-  waitForConditionTimeout: 10000, // time in ms for all waitFor... commands
+  waitForConditionTimeout: 15000, // time in ms for all waitFor... commands
 
   // screenshot visual regression options
   visual_regression_settings: {

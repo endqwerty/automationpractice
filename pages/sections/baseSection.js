@@ -4,7 +4,7 @@ module.exports = {
       selector: '#header',
       locateStrategy: 'css selector',
       elements: {
-        contactUsButton: 'a.[title="Contact Us"]',
+        contactUsButton: 'div#contact-link',
         loginButton: 'a.login',
         womenMenu: 'div>ul>li>a[title="Women"]',
         dressesMenu: 'div>ul>li>a[title="Dresses"]',
@@ -17,6 +17,9 @@ module.exports = {
       },
       commands: [
         {
+          goToContactForm: function () {
+            return this.click('@contactUsButton')
+          },
           goToLogin: function () {
             return this.click('@loginButton')
           },
