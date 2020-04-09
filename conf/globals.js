@@ -56,7 +56,9 @@ module.exports = {
 
   // Things to do at the start of each test
   beforeEach: function (browser, done) {
-    browser.timeoutsImplicitWait(5000) // implicit wait for all commands
+    process.env.LOCATION == 'remote'
+      ? browser.timeoutsImplicitWait(15000) // set a long wait for remote execution
+      : browser.timeoutsImplicitWait(5000) // implicit wait for all commands
 
     // If using Browserstack, show the build/session id in the console, so we can quickly go to it
     if (process.env.LOCATION == 'remote') {

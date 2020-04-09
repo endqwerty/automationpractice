@@ -8,12 +8,15 @@ module.exports = {
         errorBox: '#create_account_error',
       },
       props: {
-        fakeEmail: 'test+' + new Date().getTime() + '@mail.com',
+        // fakeEmail: 'test+' + new Date().getTime() + '@mail.com',
       },
       commands: [
         {
           submitWithFakeEmail: function () {
-            return this.setValue('@email', this.props.fakeEmail)
+            return this.setValue(
+              '@email',
+              'test+' + new Date().getTime() + '@mail.com'
+            )
               .click('@submitButton')
               .assert.not.visible('@errorBox')
           },

@@ -39,6 +39,5 @@ module.exports = {
     shipping.checkoutCart()
     payment.checkoutByBankWire()
     orderSummary.confirmOrder()
-    browser.pause()
   },
 }

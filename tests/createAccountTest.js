@@ -3,17 +3,22 @@ module.exports = {
 
   'Create a new account': function (browser) {
     const homePage = browser.page.homePage()
-    const loginPage = browser.page.auth.loginPage()
-    const createAccountPage = browser.page.auth.createAccountPage()
-    const myAccountPage = browser.page.myAccount.myAccountPage()
+    const header = homePage.section.header
+    const loginCreateAccount = browser.page.auth.loginPage().section
+      .createAccount
+    const createAccountInfo = browser.page.auth.createAccountPage().section
+      .accountInfo
+    const myAccountInfo = browser.page.myAccount.myAccountPage().section
+      .accountInfo
+
     homePage.navigate()
-    homePage.assert.visible(homePage.section.header).section.header.goToLogin()
-    loginPage.assert
-      .visible(loginPage.section.createAccount)
-      .section.createAccount.submitWithFakeEmail()
-    createAccountPage.assert
-      .visible(createAccountPage.section.accountInfo)
-      .section.accountInfo.fillInMinimum(
+    browser.waitForElementVisible(header)
+    header.goToLogin()
+    browser.waitForElementVisible(loginCreateAccount)
+    loginCreateAccount.submitWithFakeEmail()
+    browser.waitForElementVisible(createAccountInfo)
+    createAccountInfo
+      .fillInMinimum(
         'Daniel',
         'Yang',
         'P@ssw0rd!!!',
@@ -25,6 +30,6 @@ module.exports = {
         '1238675309'
       )
       .clickSubmit()
-    myAccountPage.assert.visible(myAccountPage.section.accountInfo)
+    browser.assert.visible(myAccountInfo)
   },
 }

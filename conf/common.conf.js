@@ -35,7 +35,7 @@ const nightwatch_config = {
   webdriver: {
     start_process: false,
     host: 'hub-cloud.browserstack.com',
-    port: 80,
+    port: 443,
     default_path_prefix: '/wd/hub',
   },
 
@@ -68,7 +68,7 @@ const nightwatch_config = {
             minute: '2-digit',
             hour12: false,
           }),
-        project: 'CD-' + process.env.npm_package_name + '-Nightwatch',
+        project: process.env.npm_package_name + '-Nightwatch',
         'browserstack.user':
           process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
         'browserstack.key':
