@@ -25,7 +25,7 @@ This limitation is due to Chromedriver only supporting LTS. Workarounds are avai
 
 For reference: [Node LTS Schedule](https://nodejs.org/en/about/releases/)
 
-## Quicksstart
+## Quickstart
 
 After cloning the repo and ensuring that you have the requisite node version, execute `npm install` and `npm run local`
 
