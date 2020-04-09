@@ -7,7 +7,13 @@ module.exports = merge(
     elements: {},
     commands: [],
     props: {},
-    sections: {},
+    sections: {
+      mainContent: {
+        selector: 'div#columns',
+        elements: { successAlert: 'p.alert-success' },
+        commands: {},
+      },
+    },
   },
   baseSection
 )

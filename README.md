@@ -25,6 +25,10 @@ This limitation is due to Chromedriver only supporting LTS. Workarounds are avai
 
 For reference: [Node LTS Schedule](https://nodejs.org/en/about/releases/)
 
+## Quicksstart
+
+After cloning the repo and ensuring that you have the requisite node version, execute `npm install` and `npm run local`
+
 ## Configuration
 
 Sample config is located in `.env.example`. The environment variables you will need to have set depends on the location you wish to run the project at.
@@ -63,6 +67,7 @@ Proxy tunneling is not supported. Implementation will likely need to make use of
 * Use ES6 syntax
 * Follow Prettier/ESLint rules
 * Do NOT use array functions. (is not 100% compatible with Nightwatch)
+* Use camelCase
 
 ### Page Object Model
 
@@ -84,6 +89,10 @@ Specific to the website automationpractice.com, this project uses the structure 
 ```
 
 As we do not have the source code for the project behind automationpractice.com, these scripts are more fragile than ones that lives with the source code. However, it is possible to identify areas of shared code in the framework such as with the auth forms.
+
+### Naming
+
+Elements are named after their function and have a suffix describing the element type.
 
 ### Creating new tests
 
@@ -118,6 +127,6 @@ Changes to build settings should always be predefined in the `conf/` files and `
 
 MIT
 
-## Resources Used
+## Additiona Resources Used
 
 [BBC](https://github.com/bbc/nightwatch-starter/tree/master/setup_files)

@@ -1,7 +1,7 @@
 module.exports = {
   '@disabled': false,
 
-  'Purchase a new item': function (browser) {
+  'Purchase an item with a new account': function (browser) {
     const homePage = browser.page.homePage()
     const header = homePage.section.header
     const catalogPage = browser.page.catalogPage()

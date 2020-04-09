@@ -38,7 +38,18 @@ module.exports = {
       locateStrategy: 'css selector',
       elements: {
         newsletterInput: 'input#newsletter-input',
+        newsletterSubmitButton: 'button[name="submitNewsletter"]',
       },
+      commands: [
+        {
+          subscribeToNewsletterWithFakeEmail: function () {
+            return this.setValue(
+              '@newsletterInput',
+              'test+' + new Date().getTime() + '@mail.com'
+            ).click('@newsletterSubmitButton')
+          },
+        },
+      ],
     },
   },
 }
