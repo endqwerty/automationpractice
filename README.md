@@ -57,9 +57,6 @@ Recognize that LOCATION is used as a value by the scripts.
 
 Remote execution requires the values `BROWSERSTACK_ACCESS_KEY` and `BROWSERSTACK_USERNAME` to be set.
 
-The CI runs only chrome to save on free execution time from Browserstack.
-Manually triggering a remote execution will run against Firefox, Chrome, and Edge
-
 ## Development
 
 * Use a Node LTS version
