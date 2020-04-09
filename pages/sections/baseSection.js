@@ -37,10 +37,7 @@ module.exports = {
       selector: '#footer',
       locateStrategy: 'css selector',
       elements: {
-        myLogo: {
-          selector: '.my-logo',
-          locateStrategy: 'css selector',
-        },
+        newsletterInput: 'input#newsletter-input',
       },
     },
   },
