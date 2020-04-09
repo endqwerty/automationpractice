@@ -47,6 +47,6 @@ module.exports = {
     payment.checkoutByBankWire()
     browser.waitForElementVisible(orderSummary)
     orderSummary.confirmOrder()
-    browser.assert.visible(orderSummary)
+    browser.assert.visible(orderConfirmation)
   },
 }
